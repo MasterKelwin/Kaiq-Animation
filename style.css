@@ -1,0 +1,133 @@
+body {
+    display: flex;
+    justify-content: space-around;
+}
+
+.main {
+    height: 1080px;
+    width: 1080px;
+    background-color: aqua;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: url(bg.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+}
+
+.wrapper {
+    position: relative;
+    height: 1080px;
+    width: 1080px;
+}
+
+.kaiq {
+    width: 800px;
+    position: absolute;
+    top: 414px;
+    left: 140px;
+}
+
+.querobel {
+    position: absolute;
+    width: 89px;
+    top: 330px;
+    left: 596px;
+    opacity: 0;
+    transition: 1s ease-in-out;
+
+}
+
+.trace1 {
+    position: absolute;
+    top: 415px;
+    left: -600px;
+    border-radius: 5px;
+    width: 710px;
+    height: 5px;
+    background-color: #0D3B66;
+    transition: 1.5s ease-in-out;
+    opacity: 0;
+}
+
+.trace2 {
+    position: absolute;
+    top: 662px;
+    left: -600px;
+    border-radius: 5px;
+    width: 800px;
+    height: 5px;
+    background-color: #0D3B66;
+    transition: 1s ease-in-out;
+    opacity: 0;
+}
+
+.trace3 {
+    position: absolute;
+    top: 662px;
+    left: 140px;
+    border-radius: 5px;
+    width: 800px;
+    height: 5px;
+    background-color: #0D3B66;
+    transition: 1s ease-in-out;
+    opacity: 0;
+}
+
+.tag {
+    position: absolute;
+    width: 600px;
+    left: 240px;
+    top: 675px;
+    opacity: 0;
+    transition: 1s ease-in-out;
+}
+
+.querobel-ativo:checked ~ .main .wrapper .querobel {
+    animation: querobel-animation 1.5s ease-in-out;
+    top: 430px;
+    opacity: 1;
+}
+
+
+@keyframes querobel-animation {
+    0% {
+        width: 89px;
+        top: 330px;
+        left: 596px;
+        opacity: 0;
+    }
+
+    80% {
+        width: 89px;
+        top: 438px;
+        left: 596px;
+        opacity: 1;
+    }
+
+    100% {
+        width: 89px;
+        top: 430px;
+        left: 596px;
+        opacity: 1;
+    }
+}
+
+.doble-trace-ativo:checked ~ .main .wrapper .trace1, .doble-trace-ativo:checked ~ .main .wrapper .trace2 {
+    left: 140px;
+    opacity: 1;
+}
+
+.trace3-ativo:checked ~ .main .wrapper .trace3 {
+    top: 720px;
+    opacity: 1;
+}
+
+.tag-ativo:checked ~ .main .wrapper .tag {
+    opacity: 1;
+    width: 800px;
+    left: 140px;
+    top: 675px;
+}
+
